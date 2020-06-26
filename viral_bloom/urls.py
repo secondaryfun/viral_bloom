@@ -1,5 +1,5 @@
 
-from django1.urls import path
+from django.urls import path
 from . import views
 from rest_framework.routers import DefaultRouter
 
