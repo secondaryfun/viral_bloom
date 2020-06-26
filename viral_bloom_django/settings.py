@@ -40,7 +40,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'viral_bloom',
     'rest_framework',
-    'django-import-export',
 ]
 
 MIDDLEWARE = [
@@ -123,8 +122,6 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
-
-IMPORT_EXPORT_USE_TRANSACTIONS = True
 
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 STATIC_URL = '/static/'
