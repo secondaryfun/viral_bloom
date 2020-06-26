@@ -19,5 +19,5 @@ from django.conf.urls import include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include(viral_bloom.urls))
+    path('', include('viral_bloom.urls'))
 ]
