@@ -15,8 +15,8 @@ class CovidDataByDate(models.Model):
 
     
 
-# with open('./daily.csv', newline='') as csvfile:
-#     reader = csv.DictReader(csvfile)
-#     for row in reader:
-#         CovidDataByDate(date=row['date'], state=row['state'], positive=row['positive'],
-#                         death=row['death'], recovered=row['recovered']).save()
+with open('./daily.csv', newline='') as csvfile:
+    reader = csv.DictReader(csvfile)
+    for row in reader:
+        CovidDataByDate(date=row['date'], state=row['state'], positive=row['positive'],
+                        death=row['death'], recovered=row['recovered']).save()
