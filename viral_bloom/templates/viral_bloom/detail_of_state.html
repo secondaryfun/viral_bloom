@@ -1,0 +1,8 @@
+{% extends 'viral_bloom/base.html' %}
+{% block content %}
+<h2>{{ state.state }}</h2>
+<h3>Date when info was gathered: {{ state.date }}</h3>
+<h4>Number of people tested positive: {{ state.positive }}</h4>
+<h4>Number of deaths: {{ state.death }}</h4>
+<h4>Number of people tested recovered: {{ state.recovered }}</h4>
+{% endblock %}

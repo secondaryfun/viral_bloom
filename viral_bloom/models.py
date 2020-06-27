@@ -1,5 +1,6 @@
 from django.db import models
 import csv
+from django.urls import reverse
 
 
 class CovidDataByDate(models.Model):
@@ -12,6 +13,7 @@ class CovidDataByDate(models.Model):
     def __str__(self):
         return self.state + " - " + self.date
 
+    
 
 # with open('./daily.csv', newline='') as csvfile:
 #     reader = csv.DictReader(csvfile)

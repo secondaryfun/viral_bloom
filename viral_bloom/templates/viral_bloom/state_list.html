@@ -1,0 +1,13 @@
+{% extends 'viral_bloom/base.html' %}
+{% block content %}
+<h2>States</h2>
+<ul>
+    {% for state in states %}
+    <li> 
+        <a href="{% url 'detail_of_state' pk=state.pk %}" >
+            {{ state.state }}
+        </a>
+     </li>
+    {% endfor %}
+</ul>
+{% endblock %}
