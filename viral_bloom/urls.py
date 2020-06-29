@@ -5,7 +5,7 @@ from rest_framework.routers import DefaultRouter
 
 urlpatterns = [
     path('statelist/', views.ListOfStates.as_view(), name='list_of_states'),
-    path('statelist/<int:date>', views.DetailOfState.as_view(),
+    path('statelist/<int:pk>', views.DetailOfState.as_view(),
          name='detail_of_state'),
     path('', views.ListOfStates.as_view(), name='list_of_states'),
     # API Views
