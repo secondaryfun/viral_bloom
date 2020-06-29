@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'viral_bloom',
     'rest_framework',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
