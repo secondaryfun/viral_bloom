@@ -1,4 +1,5 @@
 from rest_framework import generics
+from rest_framework.response import Response
 from .serializers import CovidDataByDateSerializer
 from .models import CovidDataByDate
 from django.views import View
@@ -13,15 +14,10 @@ class StateList(generics.ListCreateAPIView):
     queryset = CovidDataByDate.objects.all()
     serializer_class = CovidDataByDateSerializer
 
-    def list(self, request):
-        queryset = self.get_queryset()
+    def list(self, request, date):
+        queryset = CovidDataByDate.objects.filter(date=date)
         serializer = CovidDataByDateSerializer(queryset, many=True)
         return Response(serializer.data)
-
-    def get_queryset(self, date):
-        day_list = CovidDataByDate.objects.get(date=date)
-        return day_list
-
 
 class StateDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = CovidDataByDate.objects.all()
