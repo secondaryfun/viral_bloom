@@ -10,8 +10,17 @@ from django.shortcuts import render, redirect
 
 
 class StateList(generics.ListCreateAPIView):
-    queryset = CovidDataByDate.objects.get(date=date)
+    queryset = CovidDataByDate.objects.all()
     serializer_class = CovidDataByDateSerializer
+
+    def list(self, request):
+        queryset = self.get_queryset()
+        serializer = CovidDataByDateSerializer(queryset, many=True)
+        return Response(serializer.data)
+
+    def get_queryset(self, date):
+        day_list = CovidDataByDate.objects.get(date=date)
+        return day_list
 
 
 class StateDetail(generics.RetrieveUpdateDestroyAPIView):
