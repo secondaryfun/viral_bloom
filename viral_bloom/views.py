@@ -10,7 +10,7 @@ from django.shortcuts import render, redirect
 
 
 class StateList(generics.ListCreateAPIView):
-    queryset = CovidDataByDate.objects.all()
+    queryset = CovidDataByDate.objects.get(date=date)
     serializer_class = CovidDataByDateSerializer
 
 
@@ -24,10 +24,8 @@ class ListOfStates(View):
         states = CovidDataByDate.objects.all()
         return render(request, 'viral_bloom/state_list.html', {'states': states})
 
+
 class DetailOfState(View):
     def get(self, request, pk):
         state = CovidDataByDate.objects.get(id=pk)
         return render(request, 'viral_bloom/detail_of_state.html', {'state': state})
-
-
-
